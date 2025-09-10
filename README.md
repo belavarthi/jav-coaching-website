@@ -1,212 +1,97 @@
-# JAV Coaching Newsletter Backend
+# JAV Coaching Website
 
-This backend server handles newsletter signups for the JAV Coaching website, saving subscriber emails to a local CSV file.
+A modern, responsive website for JAV Coaching - South Asian Personal Training. Built with HTML, CSS, and JavaScript, featuring a clean design focused on South Asian cultural integration with fitness.
 
-## Features
+## 🌟 Features
 
-- ✅ **Email Collection**: Collects emails via API endpoint
-- ✅ **CSV Storage**: Stores emails in a local CSV file
-- ✅ **Email Validation**: Validates email format before processing
-- ✅ **Duplicate Prevention**: Prevents duplicate email subscriptions
-- ✅ **Error Handling**: Comprehensive error handling and user feedback
-- ✅ **Security**: Input validation and secure email handling
-- ✅ **Simple Setup**: No database or email configuration required
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
+- **South Asian Focus**: Content and imagery tailored for South Asian community
+- **Modern UI**: Clean, professional design with gold and teal accents
+- **Interactive Elements**: Smooth animations and user-friendly navigation
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
 
-## Setup Instructions
+## 📱 Pages
 
-### 1. Install Dependencies
+- **Home**: Hero section, transformation photos, coach profiles, testimonials, FAQ
+- **About**: Coach philosophy, values, personal journeys
+- **Services**: Personalized coaching programs and upcoming app
+- **Blog**: Interactive blog posts with modal functionality
+- **Contact**: Contact form and social media links
 
+## 🚀 Quick Start
+
+### Option 1: Python Server (Recommended)
 ```bash
-npm install
+python3 -m http.server 8000
 ```
+Then visit: `http://localhost:8000`
 
-### 2. Start the Server
-
-**Development mode (with auto-restart):**
-```bash
-npm run dev
-```
-
-**Production mode:**
+### Option 2: Node.js Server
 ```bash
 npm start
 ```
 
-The server will start on port 3001 by default.
+## 🛠️ Development
 
-## CSV File
-
-Newsletter subscribers are automatically saved to `newsletter_subscribers.csv` with the following format:
-
-```csv
-email,subscribed_at,source
-user@example.com,2025-01-10T12:00:00.000Z,newsletter
-another@example.com,2025-01-10T12:05:00.000Z,newsletter
+### File Structure
 ```
-
-## API Endpoints
-
-### POST `/api/newsletter-signup`
-Subscribe to newsletter
-
-**Request:**
-```json
-{
-  "email": "user@example.com"
-}
-```
-
-**Success Response:**
-```json
-{
-  "success": true,
-  "message": "Thanks for subscribing! Check your email for our free guides.",
-  "email": "user@example.com"
-}
-```
-
-**Error Response:**
-```json
-{
-  "success": false,
-  "message": "Please provide a valid email address"
-}
-```
-
-### GET `/api/subscribers`
-Get all subscribers (admin endpoint)
-
-**Response:**
-```json
-{
-  "success": true,
-  "subscribers": [
-    {
-      "email": "user@example.com",
-      "subscribed_at": "2025-01-10T12:00:00.000Z",
-      "source": "newsletter"
-    }
-  ],
-  "count": 1
-}
-```
-
-### GET `/api/health`
-Health check endpoint
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "JAV Coaching backend is running",
-  "timestamp": "2025-01-10T12:00:00.000Z"
-}
-```
-
-## How It Works
-
-When someone subscribes, the system will:
-
-1. **Validate the email** format
-2. **Check for duplicates** in the CSV file
-3. **Add the email** to `newsletter_subscribers.csv` with timestamp
-4. **Return success message** to the user
-
-## File Structure
-
-```
-├── server.js                    # Main server file
-├── package.json                 # Dependencies and scripts
-├── newsletter_subscribers.csv   # Subscriber data (created automatically)
+/
+├── index.html          # Homepage
+├── about.html          # About page
+├── services.html       # Services page
+├── blog.html           # Blog page
+├── contact.html        # Contact page
 ├── assets/
-│   ├── main.js                 # Frontend JavaScript
-│   └── styles.css              # Frontend CSS
-└── README.md                   # This file
+│   ├── styles.css      # All styles
+│   └── main.js         # JavaScript functionality
+├── Photos/             # All images
+└── package.json        # Project configuration
 ```
 
-## Frontend Integration
+### Key Features
+- **Transformation Gallery**: 3x3 grid with additional photos
+- **Coach Profiles**: Side-by-side coach cards with bios
+- **Testimonials**: Real client success stories
+- **FAQ Section**: Common questions and answers
+- **Blog Modal**: Interactive blog post viewer
+- **Typeform Integration**: Coaching program signup
+- **Calendly Integration**: Consultation booking
 
-The frontend JavaScript automatically:
+## 🎨 Design System
 
-- Validates email format
-- Shows loading states during submission
-- Displays success/error messages
-- Handles network errors gracefully
+### Colors
+- **Primary Gold**: #D4AF37
+- **Secondary Teal**: #20B2AA
+- **Dark Background**: #1a1a1a
+- **Light Text**: #ffffff
+- **Accent Colors**: Various gold and teal shades
 
-## Security Features
+### Typography
+- **Headings**: Modern, bold fonts
+- **Body Text**: Clean, readable fonts
+- **Responsive**: Scales appropriately on all devices
 
-- ✅ Email format validation
-- ✅ Duplicate email prevention
-- ✅ CORS configuration
-- ✅ Input sanitization
-- ✅ File system security
+## 📱 Responsive Breakpoints
 
-## File Structure
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
 
-```
-├── server.js              # Main server file
-├── package.json           # Dependencies and scripts
-├── env.example           # Environment variables template
-├── newsletter.db         # SQLite database (created automatically)
-├── assets/
-│   ├── main.js          # Frontend JavaScript (updated)
-│   └── styles.css       # Frontend CSS (updated)
-└── README.md            # This file
-```
+## 🔗 External Integrations
 
-## Troubleshooting
+- **Typeform**: Coaching program questionnaire
+- **Calendly**: Consultation booking
+- **Instagram**: @javcoaching
+- **LinkedIn**: Company profile
 
-### Common Issues
+## 📄 License
 
-1. **Email not sending**: Check your SMTP credentials and app password
-2. **Database errors**: Ensure the server has write permissions in the directory
-3. **CORS errors**: The server includes CORS middleware for cross-origin requests
+MIT License - Feel free to use this as a template for your own fitness coaching website.
 
-### Logs
+## 🤝 Contributing
 
-The server logs important events to the console:
-- Database connections
-- New subscriptions
-- Email sending status
-- Errors and warnings
+This is a client project for JAV Coaching. For questions or support, contact the development team.
 
-## Production Deployment
+---
 
-For production deployment:
-
-1. Set `NODE_ENV=production` in your environment
-2. Use a production database (PostgreSQL recommended)
-3. Set up proper logging
-4. Configure reverse proxy (nginx)
-5. Use PM2 or similar for process management
-6. Set up SSL certificates
-
-## Troubleshooting
-
-### Common Issues
-
-1. **CSV file not created**: Ensure the server has write permissions in the directory
-2. **CORS errors**: The server includes CORS middleware for cross-origin requests
-3. **Port conflicts**: Make sure port 3001 is available
-
-### Logs
-
-The server logs important events to the console:
-- CSV file creation
-- New subscriptions
-- Errors and warnings
-
-## Production Deployment
-
-For production deployment:
-
-1. Set `NODE_ENV=production` in your environment
-2. Set up proper logging
-3. Configure reverse proxy (nginx)
-4. Use PM2 or similar for process management
-5. Set up SSL certificates
-6. Ensure CSV file backup strategy
-
-## Support
-
-For issues or questions, check the console logs and ensure the server has proper file permissions.
+**Built with ❤️ for the South Asian fitness community**
