@@ -249,11 +249,50 @@ input:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba
 
 /* Footer */
 .site-footer{margin-top:40px;border-top:1px solid var(--border);background:var(--bg-soft)}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start;padding:40px 0}
 .footer-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
 .footer-logo{height:40px;width:auto;border-radius:6px;margin-bottom:8px}
 .footer-brand p{margin:0;color:var(--muted);font-size:14px}
-.copyright{padding:8px 0 24px;color:var(--muted);font-size:14px}
+.copyright{padding:8px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+.social{display:flex;flex-direction:column;align-items:center;gap:8px}
 .social a{display:inline-block;color:var(--muted);margin-right:10px}
+
+/* Newsletter Form */
+.newsletter-form{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:300px;margin:0 auto}
+.newsletter-form label{font-family:Poppins,Inter,sans-serif;font-weight:600;font-size:18px;color:var(--text);margin-bottom:8px}
+.newsletter-description{color:var(--muted);font-size:14px;margin:0 0 16px;line-height:1.4}
+.newsletter-input-group{display:flex;gap:8px;width:100%;max-width:280px}
+.newsletter-input{flex:1;padding:12px 16px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;transition:border-color .2s ease}
+.newsletter-input:focus{outline:none;border-color:var(--primary)}
+.newsletter-input::placeholder{color:var(--muted)}
+.newsletter-submit{padding:12px 20px;white-space:nowrap;font-size:14px}
+.newsletter-message{margin-top:12px;padding:8px 12px;border-radius:6px;font-size:14px;text-align:center;min-height:20px}
+.newsletter-message.success{background:rgba(16,185,129,.1);color:var(--primary);border:1px solid rgba(16,185,129,.2)}
+.newsletter-message.error{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2)}
+.newsletter-message.loading{color:var(--muted)}
+
+/* Newsletter Popup Modal */
+.newsletter-popup{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.8);display:none;z-index:9999;align-items:center;justify-content:center;padding:20px;box-sizing:border-box}
+.newsletter-popup.show{display:flex !important}
+.newsletter-popup-content{background:var(--card);border-radius:16px;padding:32px;max-width:500px;width:100%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.5);border:1px solid var(--border);margin:auto;transform:translateY(0)}
+.newsletter-popup-close{position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;color:var(--muted);cursor:pointer;padding:8px;border-radius:50%;transition:all .2s ease}
+.newsletter-popup-close:hover{background:var(--bg-soft);color:var(--text)}
+.newsletter-popup-header{text-align:center;margin-bottom:24px}
+.newsletter-popup-header h2{font-family:Poppins,Inter,sans-serif;font-size:24px;font-weight:700;color:var(--text);margin:0 0 12px;line-height:1.2}
+.newsletter-popup-header p{color:var(--muted);font-size:16px;margin:0;line-height:1.4}
+.newsletter-popup-benefits{margin-bottom:24px}
+.benefit-item{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:8px 0}
+.benefit-icon{font-size:20px;flex-shrink:0}
+.benefit-item span:last-child{color:var(--text);font-size:14px;line-height:1.4}
+.newsletter-popup-form{margin-bottom:16px}
+.newsletter-popup-input{width:100%;padding:14px 16px;background:var(--bg-soft);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:16px;margin-bottom:16px;transition:border-color .2s ease}
+.newsletter-popup-input:focus{outline:none;border-color:var(--primary)}
+.newsletter-popup-input::placeholder{color:var(--muted)}
+.newsletter-popup-buttons{display:flex;gap:12px;flex-direction:column}
+.newsletter-popup-submit{width:100%;padding:14px 20px;font-size:16px;font-weight:600}
+.newsletter-popup-dismiss{width:100%;padding:12px 20px;font-size:14px;background:transparent;color:var(--muted);border:1px solid var(--border)}
+.newsletter-popup-dismiss:hover{background:var(--bg-soft);color:var(--text)}
+.newsletter-popup-note{text-align:center;color:var(--muted);font-size:12px;margin:0;line-height:1.3}
 
 /* Tricolor bar */
 .tricolor-bar{height:4px;background:linear-gradient(90deg,var(--india-saffron) 0 33%, var(--india-white) 33% 66%, var(--india-green) 66% 100%)}
@@ -366,5 +405,14 @@ input:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba
   .site-nav{position:fixed;inset:60px 0 auto 0;background:rgba(11,15,19,.96);border-bottom:1px solid var(--border);display:none;flex-direction:column;padding:18px}
   .site-nav[data-open="true"]{display:flex}
   .nav-toggle{display:inline-flex}
+  .footer-grid{grid-template-columns:1fr;gap:32px;text-align:center}
+  .newsletter-input-group{flex-direction:column;gap:12px}
+  .newsletter-input{max-width:100%}
+  .newsletter-submit{width:100%}
+  .newsletter-popup{padding:10px}
+  .newsletter-popup-content{padding:24px;max-width:90%}
+  .newsletter-popup-header h2{font-size:20px}
+  .newsletter-popup-header p{font-size:14px}
+  .benefit-item span:last-child{font-size:13px}
 }
 

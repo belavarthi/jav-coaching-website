@@ -20,11 +20,10 @@
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="site-nav" data-nav>
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html" class="active">Services</a>
-        <a href="/blog.html">Blog</a>
-        <a href="https://calendly.com/belavarthi/jav-coaching-consultation" class="btn btn-accent" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="blog.html">Blog</a>
       </nav>
     </div>
   </header>
@@ -56,13 +55,20 @@
         <img src="/Photos/logo.jpg" alt="JAV Coaching Logo" class="footer-logo">
         <p>South Asian Personal Training</p>
       </div>
-      <form class="newsletter" data-newsletter>
-        <label for="newsletter-email">Join our newsletter</label>
-        <div class="inline-form">
-          <input id="newsletter-email" name="email" type="email" placeholder="Your email" required>
-          <button class="btn btn-accent" type="submit">Sign Up</button>
+      <form class="newsletter-form" action="https://formspree.io/f/mvgwqynd" method="POST">
+        <label for="newsletter-email">Stay Updated</label>
+        <p class="newsletter-description">Get fitness tips and nutrition advice delivered to your inbox.</p>
+        <div class="newsletter-input-group">
+          <input 
+            id="newsletter-email" 
+            name="email" 
+            type="email" 
+            placeholder="Enter your email" 
+            required
+            class="newsletter-input"
+          >
+          <button type="submit" class="btn btn-accent newsletter-submit">Subscribe</button>
         </div>
-        <p class="form-note">Get tips on fitness, nutrition, and wellbeing.</p>
       </form>
       <div class="social">
         <a href="https://www.instagram.com/javcoaching/" aria-label="Instagram">Instagram</a>

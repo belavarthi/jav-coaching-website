@@ -20,11 +20,10 @@
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="site-nav" data-nav>
-        <a href="/index.html">Home</a>
-        <a href="/about.html" class="active">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/blog.html">Blog</a>
-        <a href="https://calendly.com/belavarthi/jav-coaching-consultation" class="btn btn-accent" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
       </nav>
     </div>
   </header>
@@ -93,13 +92,15 @@
           <div class="journey-item">
             <h3>Arjav's Story</h3>
             <div class="journey-content">
-              <p><em>Personal journey content for Arjav will be added here...</em></p>
+              <p>At just 16 years old, Arjav began his fitness journey and successfully lost 60 pounds. Behind that transformation came challenges: extreme dieting and the struggles of an eating disorder. Determined to find a healthier way, he immersed himself in fitness and nutrition research, which sparked a lifelong passion for bodybuilding and wellness.</p>
+              <p>After completing his NASM certification, Arjav began by training clients in person, channeling his personal experiences into helping others avoid the same pitfalls. In 2022, he founded JAV Coaching with a clear mission: to tackle the very struggles he once faced and empower others to achieve lasting results through sustainable fitness and nutrition.</p>
             </div>
           </div>
           <div class="journey-item">
             <h3>Bhargava's Story</h3>
             <div class="journey-content">
-              <p><em>Personal journey content for Bhargava will be added here...</em></p>
+              <p>Bhargava began his fitness journey in high school after years of struggling with being severely underweight. Born with multiple food allergies, he was forced to adapt to strict dietary restrictions while finding ways to build muscle, gain weight, and create a sustainable healthy lifestyle. Over time, this challenge fueled his passion for bodybuilding, health, and overall wellness.</p>
+              <p>Since then, Bhargava has continued to pursue his own wellness goals while coaching and supporting individuals from diverse backgrounds and lifestyles. In partnership with Arjav, he has guided clients through weight loss, muscle gain, and long-term habit building—helping them prioritize wellness, improve confidence, and embrace healthier lifestyles in every aspect of their lives.</p>
             </div>
           </div>
         </div>
@@ -113,13 +114,20 @@
         <img src="/Photos/logo.jpg" alt="JAV Coaching Logo" class="footer-logo">
         <p>South Asian Personal Training</p>
       </div>
-      <form class="newsletter" data-newsletter>
-        <label for="newsletter-email">Join our newsletter</label>
-        <div class="inline-form">
-          <input id="newsletter-email" name="email" type="email" placeholder="Your email" required>
-          <button class="btn btn-accent" type="submit">Sign Up</button>
+      <form class="newsletter-form" action="https://formspree.io/f/mvgwqynd" method="POST">
+        <label for="newsletter-email">Stay Updated</label>
+        <p class="newsletter-description">Get fitness tips and nutrition advice delivered to your inbox.</p>
+        <div class="newsletter-input-group">
+          <input 
+            id="newsletter-email" 
+            name="email" 
+            type="email" 
+            placeholder="Enter your email" 
+            required
+            class="newsletter-input"
+          >
+          <button type="submit" class="btn btn-accent newsletter-submit">Subscribe</button>
         </div>
-        <p class="form-note">Get tips on fitness, nutrition, and wellbeing.</p>
       </form>
       <div class="social">
         <a href="https://www.instagram.com/javcoaching/" aria-label="Instagram">Instagram</a>

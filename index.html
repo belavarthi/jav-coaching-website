@@ -26,12 +26,10 @@
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <nav class="site-nav" data-nav>
-        <a href="/index.html" class="active">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/blog.html">Blog</a>
-        
-        <a href="https://calendly.com/belavarthi/jav-coaching-consultation" class="btn btn-accent" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
       </nav>
     </div>
   </header>
@@ -42,8 +40,8 @@
         <h1>Transform Your Health with South Asian–Focused Coaching</h1>
         <p class="subhead">Fitness, nutrition, and accountability designed with your culture and lifestyle in mind.</p>
         <div class="cta-group">
-          <a href="https://calendly.com/belavarthi/jav-coaching-consultation" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Your Free Consultation</a>
-          <a href="/services.html" class="btn btn-ghost">Explore Services</a>
+          <a href="https://form.typeform.com/to/LrpoZN7n?typeform-source=javcoaching.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Started Today</a>
+          <a href="services.html" class="btn btn-ghost">Explore Services</a>
         </div>
       </div>
     </section>
@@ -212,6 +210,21 @@
         <img src="/Photos/logo.jpg" alt="JAV Coaching Logo" class="footer-logo">
         <p>South Asian Personal Training</p>
       </div>
+      <form class="newsletter-form" action="https://formspree.io/f/mvgwqynd" method="POST">
+        <label for="newsletter-email">Stay Updated</label>
+        <p class="newsletter-description">Get fitness tips and nutrition advice delivered to your inbox.</p>
+        <div class="newsletter-input-group">
+          <input 
+            id="newsletter-email" 
+            name="email" 
+            type="email" 
+            placeholder="Enter your email" 
+            required
+            class="newsletter-input"
+          >
+          <button type="submit" class="btn btn-accent newsletter-submit">Subscribe</button>
+        </div>
+      </form>
       <div class="social">
         <a href="https://www.instagram.com/javcoaching/" aria-label="Instagram">Instagram</a>
         <a href="https://www.linkedin.com/company/javcoaching/" aria-label="LinkedIn">LinkedIn</a>
@@ -219,6 +232,50 @@
     </div>
     <div class="container copyright">© 2025 JAV Coaching | South Asian Personal Training</div>
   </footer>
+
+  <!-- Newsletter Popup Modal -->
+  <div id="newsletter-popup" class="newsletter-popup">
+    <div class="newsletter-popup-content">
+      <button class="newsletter-popup-close" id="popup-close">&times;</button>
+      <div class="newsletter-popup-header">
+        <h2>Get Your Free Fitness & Nutrition Guide!</h2>
+        <p>Join thousands of South Asians who are transforming their health with our exclusive tips and strategies.</p>
+      </div>
+      <div class="newsletter-popup-benefits">
+        <div class="benefit-item">
+          <span class="benefit-icon">🥗</span>
+          <span>High-protein Indian recipes that actually taste amazing</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">💪</span>
+          <span>Workout plans designed for busy South Asian lifestyles</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">🧠</span>
+          <span>Nutrition tips to balance traditional foods with fitness goals</span>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon">📱</span>
+          <span>Weekly motivation and success stories from our community</span>
+        </div>
+      </div>
+      <form class="newsletter-popup-form" action="https://formspree.io/f/mvgwqynd" method="POST">
+        <input type="hidden" name="_next" value="http://localhost:8080/?subscribed=true">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Enter your email address" 
+          required
+          class="newsletter-popup-input"
+        >
+        <div class="newsletter-popup-buttons">
+          <button type="submit" class="btn btn-primary newsletter-popup-submit">Get My Free Guide!</button>
+          <button type="button" class="btn btn-ghost newsletter-popup-dismiss" id="popup-dismiss">No Thanks</button>
+        </div>
+      </form>
+      <p class="newsletter-popup-note">Join 2,000+ South Asians on their fitness journey. Unsubscribe anytime.</p>
+    </div>
+  </div>
 
   <script src="/assets/main.js" defer></script>
 </body>
