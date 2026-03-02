@@ -38,40 +38,17 @@
 
     <section class="blog-content">
       <div class="container">
-        <div class="blog-grid">
-          <article class="blog-post" onclick="openBlogPost('indian-diet-health')">
+        <div class="blog-toolbar">
+          <span class="blog-toolbar-label">Sort by:</span>
+          <div class="blog-sort-options">
+            <button type="button" class="blog-sort-btn active" data-sort="newest" aria-pressed="true">Newest first</button>
+            <button type="button" class="blog-sort-btn" data-sort="oldest" aria-pressed="false">Oldest first</button>
+          </div>
+        </div>
+        <div class="blog-grid" id="blogGrid">
+          <article class="blog-post" data-date="2026-02-28" onclick="openBlogPost('south-asian-diet-habits')">
             <div class="blog-meta">
-              <span class="blog-date">Jan 30, 2025</span>
-              <span class="blog-category">Nutrition</span>
-            </div>
-            <h2>The Role of the Indian Diet in Health Issues and Weight Gain Among Indians Living in the U.S.</h2>
-            <p>Understanding how traditional Indian dietary habits intersect with modern health challenges in the U.S., and strategies for maintaining cultural food connections while achieving health goals.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('indian-diet-history')">
-            <div class="blog-meta">
-              <span class="blog-date">Feb 11, 2025</span>
-              <span class="blog-category">Nutrition</span>
-            </div>
-            <h2>How Indian Food History Created Our Modern Health Crisis</h2>
-            <p>Exploring how famines, cultural traditions, and survival-based eating patterns shaped Indian diets and why these historical factors now contribute to modern health challenges.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('high-protein-indian-foods')">
-            <div class="blog-meta">
-              <span class="blog-date">Feb 26, 2025</span>
-              <span class="blog-category">Nutrition</span>
-            </div>
-            <h2>High Protein Indian Foods: How to Build Muscle While Enjoying Your Favorite Foods</h2>
-            <p>Discover the best high-protein Indian foods and learn how to build muscle while maintaining your cultural food traditions and favorite dishes.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('south-asian-diet-habits')">
-            <div class="blog-meta">
-              <span class="blog-date">Feb 28, 2025</span>
+              <span class="blog-date">Feb 28, 2026</span>
               <span class="blog-category">Nutrition</span>
             </div>
             <h2>Build the Right Eating Habits With the South Asian Diet</h2>
@@ -79,47 +56,7 @@
             <a href="#" class="btn btn-secondary">Read More</a>
           </article>
 
-          <article class="blog-post" onclick="openBlogPost('habit-formation-science')">
-            <div class="blog-meta">
-              <span class="blog-date">Mar 10, 2025</span>
-              <span class="blog-category">Health</span>
-            </div>
-            <h2>The Science Behind Habit Formation: Building Long-Term Fitness Consistency</h2>
-            <p>Understanding the science behind habit formation and learn proven strategies to build and maintain long-term behavioral changes for fitness success.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('why-protein-important')">
-            <div class="blog-meta">
-              <span class="blog-date">Mar 19, 2025</span>
-              <span class="blog-category">Nutrition</span>
-            </div>
-            <h2>Why Is Protein So Important? Understanding Protein's Role in Indian Health</h2>
-            <p>Discover why protein is crucial for Indians living in the U.S., common misconceptions about protein, and practical strategies to boost your protein intake while maintaining cultural food traditions.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('cardio-obsession')">
-            <div class="blog-meta">
-              <span class="blog-date">Apr 2, 2025</span>
-              <span class="blog-category">Fitness</span>
-            </div>
-            <h2>The Obsession with Cardio: Why Cardio Alone Won't Get Rid of Your Belly Fat</h2>
-            <p>Learn why relying on cardio alone might be making your results worse, and discover the proven approach to lose fat and keep it off for South Asians.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('indian-fitness-laziness')">
-            <div class="blog-meta">
-              <span class="blog-date">Jun 10, 2025</span>
-              <span class="blog-category">Culture</span>
-            </div>
-            <h2>Why Are Indians Lazier When it Comes to Fitness? The Perspective of an Indian Fitness Coach</h2>
-            <p>An honest look at why South Asians struggle with fitness priorities, cultural barriers, and how to break free from excuses to prioritize health.</p>
-            <a href="#" class="btn btn-secondary">Read More</a>
-          </article>
-
-          <article class="blog-post" onclick="openBlogPost('summer-travel-fitness')">
+          <article class="blog-post" data-date="2025-07-16" onclick="openBlogPost('summer-travel-fitness')">
             <div class="blog-meta">
               <span class="blog-date">Jul 16, 2025</span>
               <span class="blog-category">Lifestyle</span>
@@ -129,7 +66,75 @@
             <a href="#" class="btn btn-secondary">Read More</a>
           </article>
 
+          <article class="blog-post" data-date="2025-06-10" onclick="openBlogPost('indian-fitness-laziness')">
+            <div class="blog-meta">
+              <span class="blog-date">Jun 10, 2025</span>
+              <span class="blog-category">Culture</span>
+            </div>
+            <h2>Why Are Indians Lazier When it Comes to Fitness? The Perspective of an Indian Fitness Coach</h2>
+            <p>An honest look at why South Asians struggle with fitness priorities, cultural barriers, and how to break free from excuses to prioritize health.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
 
+          <article class="blog-post" data-date="2025-04-02" onclick="openBlogPost('cardio-obsession')">
+            <div class="blog-meta">
+              <span class="blog-date">Apr 2, 2025</span>
+              <span class="blog-category">Fitness</span>
+            </div>
+            <h2>The Obsession with Cardio: Why Cardio Alone Won't Get Rid of Your Belly Fat</h2>
+            <p>Learn why relying on cardio alone might be making your results worse, and discover the proven approach to lose fat and keep it off for South Asians.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
+
+          <article class="blog-post" data-date="2025-03-19" onclick="openBlogPost('why-protein-important')">
+            <div class="blog-meta">
+              <span class="blog-date">Mar 19, 2025</span>
+              <span class="blog-category">Nutrition</span>
+            </div>
+            <h2>Why Is Protein So Important? Understanding Protein's Role in Indian Health</h2>
+            <p>Discover why protein is crucial for Indians living in the U.S., common misconceptions about protein, and practical strategies to boost your protein intake while maintaining cultural food traditions.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
+
+          <article class="blog-post" data-date="2025-03-10" onclick="openBlogPost('habit-formation-science')">
+            <div class="blog-meta">
+              <span class="blog-date">Mar 10, 2025</span>
+              <span class="blog-category">Health</span>
+            </div>
+            <h2>The Science Behind Habit Formation: Building Long-Term Fitness Consistency</h2>
+            <p>Understanding the science behind habit formation and learn proven strategies to build and maintain long-term behavioral changes for fitness success.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
+
+          <article class="blog-post" data-date="2025-02-26" onclick="openBlogPost('high-protein-indian-foods')">
+            <div class="blog-meta">
+              <span class="blog-date">Feb 26, 2025</span>
+              <span class="blog-category">Nutrition</span>
+            </div>
+            <h2>High Protein Indian Foods: How to Build Muscle While Enjoying Your Favorite Foods</h2>
+            <p>Discover the best high-protein Indian foods and learn how to build muscle while maintaining your cultural food traditions and favorite dishes.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
+
+          <article class="blog-post" data-date="2025-02-11" onclick="openBlogPost('indian-diet-history')">
+            <div class="blog-meta">
+              <span class="blog-date">Feb 11, 2025</span>
+              <span class="blog-category">Nutrition</span>
+            </div>
+            <h2>How Indian Food History Created Our Modern Health Crisis</h2>
+            <p>Exploring how famines, cultural traditions, and survival-based eating patterns shaped Indian diets and why these historical factors now contribute to modern health challenges.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
+
+          <article class="blog-post" data-date="2025-01-30" onclick="openBlogPost('indian-diet-health')">
+            <div class="blog-meta">
+              <span class="blog-date">Jan 30, 2025</span>
+              <span class="blog-category">Nutrition</span>
+            </div>
+            <h2>The Role of the Indian Diet in Health Issues and Weight Gain Among Indians Living in the U.S.</h2>
+            <p>Understanding how traditional Indian dietary habits intersect with modern health challenges in the U.S., and strategies for maintaining cultural food connections while achieving health goals.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+          </article>
         </div>
 
         <div class="blog-cta">
@@ -347,7 +352,7 @@
       },
       'south-asian-diet-habits': {
         title: 'Build the Right Eating Habits With the South Asian Diet',
-        date: 'February 28, 2025',
+        date: 'February 28, 2026',
         author: 'Arjav Chhabra',
         category: 'Nutrition, South Asian Diet, Habits',
         content: `
@@ -645,6 +650,29 @@
         closeBlogModal();
       }
     });
+
+    // Blog sort: newest vs oldest
+    var blogGrid = document.getElementById('blogGrid');
+    var sortBtns = document.querySelectorAll('.blog-sort-btn');
+    if (blogGrid && sortBtns.length) {
+      function sortBlogs(order) {
+        var posts = [].slice.call(blogGrid.querySelectorAll('.blog-post'));
+        posts.sort(function(a, b) {
+          var dateA = a.getAttribute('data-date') || '';
+          var dateB = b.getAttribute('data-date') || '';
+          return order === 'newest' ? (dateB.localeCompare(dateA)) : (dateA.localeCompare(dateB));
+        });
+        posts.forEach(function(el) { blogGrid.appendChild(el); });
+      }
+      sortBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var sort = this.getAttribute('data-sort');
+          sortBlogs(sort);
+          sortBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+          this.classList.add('active'); this.setAttribute('aria-pressed', 'true');
+        });
+      });
+    }
   </script>
 </body>
 </html>

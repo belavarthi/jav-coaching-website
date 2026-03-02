@@ -178,6 +178,12 @@ blockquote cite{display:block;margin-top:10px;color:var(--muted);font-style:norm
 
 /* Blog Page */
 .blog-content{padding:60px 0;background:linear-gradient(180deg, transparent, rgba(255,255,255,.02))}
+.blog-toolbar{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.blog-toolbar-label{font-size:14px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.blog-sort-options{display:flex;gap:8px}
+.blog-sort-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:8px 16px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s ease, border-color .2s ease, color .2s ease}
+.blog-sort-btn:hover{background:var(--border);color:var(--text)}
+.blog-sort-btn.active{background:var(--accent);border-color:var(--accent);color:white}
 .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-bottom:60px}
 .blog-post{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:var(--shadow);transition:transform .2s ease;overflow:hidden;display:flex;flex-direction:column;min-height:0}
 .blog-post:hover{transform:translateY(-2px)}
