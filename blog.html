@@ -44,15 +44,19 @@
             <button type="button" class="blog-sort-btn active" data-sort="newest" aria-pressed="true">Newest first</button>
             <button type="button" class="blog-sort-btn" data-sort="oldest" aria-pressed="false">Oldest first</button>
           </div>
+          <label for="blogCategoryFilter" class="blog-toolbar-label">Category:</label>
+          <select id="blogCategoryFilter" class="blog-category-filter" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
         </div>
         <div class="blog-grid" id="blogGrid">
-          <article class="blog-post" data-date="2026-02-28" onclick="openBlogPost('south-asian-diet-habits')">
+          <article class="blog-post" data-date="2026-03-24" onclick="openBlogPost('consistency-wins-every-time')">
             <div class="blog-meta">
-              <span class="blog-date">Feb 28, 2026</span>
-              <span class="blog-category">Nutrition</span>
+              <span class="blog-date">Mar 24, 2026</span>
+              <span class="blog-category">Health</span>
             </div>
-            <h2>Build the Right Eating Habits With the South Asian Diet</h2>
-            <p>For many South Asians, dieting feels like a catch-22: eat traditional foods and struggle with your weight, or abandon your foods for the Western meal plan. The South Asian diet isn't the problem—the lack of structure around it is.</p>
+            <h2>The Reason Consistency Wins Every Time</h2>
+            <p>Most people keep searching for a better method. Real progress comes from showing up long enough for a good method to work.</p>
             <a href="#" class="btn btn-secondary">Read More</a>
           </article>
 
@@ -66,13 +70,13 @@
             <a href="#" class="btn btn-secondary">Read More</a>
           </article>
 
-          <article class="blog-post" data-date="2026-03-03" onclick="openBlogPost('consistency-wins-every-time')">
+          <article class="blog-post" data-date="2026-02-28" onclick="openBlogPost('south-asian-diet-habits')">
             <div class="blog-meta">
-              <span class="blog-date">Mar 3, 2026</span>
-              <span class="blog-category">Health</span>
+              <span class="blog-date">Feb 28, 2026</span>
+              <span class="blog-category">Nutrition</span>
             </div>
-            <h2>The Reason Consistency Wins Every Time</h2>
-            <p>Most people keep searching for a better method. Real progress comes from showing up long enough for a good method to work.</p>
+            <h2>Build the Right Eating Habits With the South Asian Diet</h2>
+            <p>For many South Asians, dieting feels like a catch-22: eat traditional foods and struggle with your weight, or abandon your foods for the Western meal plan. The South Asian diet isn't the problem—the lack of structure around it is.</p>
             <a href="#" class="btn btn-secondary">Read More</a>
           </article>
 
@@ -160,7 +164,7 @@
         <div class="blog-cta">
           <h2>Ready to Start Your Journey?</h2>
           <p>Get personalized guidance tailored to your South Asian lifestyle and cultural preferences.</p>
-          <a href="/contact.html" class="btn btn-primary">Book Your Consultation</a>
+          <a href="https://form.typeform.com/to/LrpoZN7n?typeform-source=javcoaching.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Your Consultation</a>
         </div>
       </div>
     </section>
@@ -482,7 +486,7 @@
       },
       'consistency-wins-every-time': {
         title: 'The Reason Consistency Wins Every Time',
-        date: 'March 3, 2026',
+        date: 'March 24, 2026',
         author: 'Arjav Chhabra',
         category: 'Health',
         content: `
@@ -737,27 +741,55 @@
       }
     });
 
-    // Blog sort: newest vs oldest
+    // Blog sort + category filter
     var blogGrid = document.getElementById('blogGrid');
     var sortBtns = document.querySelectorAll('.blog-sort-btn');
-    if (blogGrid && sortBtns.length) {
-      function sortBlogs(order) {
-        var posts = [].slice.call(blogGrid.querySelectorAll('.blog-post'));
+    var blogCategoryFilter = document.getElementById('blogCategoryFilter');
+    if (blogGrid && sortBtns.length && blogCategoryFilter) {
+      var allPosts = [].slice.call(blogGrid.querySelectorAll('.blog-post'));
+      function sortAndFilterBlogs(order, category) {
+        var posts = allPosts.slice();
         posts.sort(function(a, b) {
           var dateA = a.getAttribute('data-date') || '';
           var dateB = b.getAttribute('data-date') || '';
           return order === 'newest' ? (dateB.localeCompare(dateA)) : (dateA.localeCompare(dateB));
         });
-        posts.forEach(function(el) { blogGrid.appendChild(el); });
+        posts.forEach(function(el) {
+          var postCategoryEl = el.querySelector('.blog-category');
+          var postCategory = postCategoryEl ? postCategoryEl.textContent.trim().toLowerCase() : '';
+          var matchesCategory = category === 'all' || postCategory === category;
+          el.style.display = matchesCategory ? '' : 'none';
+          blogGrid.appendChild(el);
+        });
       }
+      var uniqueCategories = {};
+      allPosts.forEach(function(el) {
+        var postCategoryEl = el.querySelector('.blog-category');
+        if (!postCategoryEl) return;
+        var label = postCategoryEl.textContent.trim();
+        if (!label) return;
+        var key = label.toLowerCase();
+        if (uniqueCategories[key]) return;
+        uniqueCategories[key] = true;
+        var option = document.createElement('option');
+        option.value = key;
+        option.textContent = label;
+        blogCategoryFilter.appendChild(option);
+      });
       sortBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
           var sort = this.getAttribute('data-sort');
-          sortBlogs(sort);
           sortBtns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
           this.classList.add('active'); this.setAttribute('aria-pressed', 'true');
+          sortAndFilterBlogs(sort, blogCategoryFilter.value);
         });
       });
+      blogCategoryFilter.addEventListener('change', function() {
+        var activeBtn = document.querySelector('.blog-sort-btn.active');
+        var sort = activeBtn ? activeBtn.getAttribute('data-sort') : 'newest';
+        sortAndFilterBlogs(sort, this.value);
+      });
+      sortAndFilterBlogs('newest', 'all');
     }
   </script>
 </body>
